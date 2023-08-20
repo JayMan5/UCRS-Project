@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+</head>
+    <meta charset="UTf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Jay's Framework</title>
+<body>
+  <header>
+    <h1>UCRS framework</h1>
+  </header>
+  <nav>
+    <img src="Image/Dem 1.jpg" alt="" class="word">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    </div>
+  </nav>
+  <main>
+    <h2>Welcome to the UCRS Framework</h2>
+    <p>National Bureau of Statistics</p>
+  </main>
+</body>
+</html>
+<script>
+    function validateForm() {
+      var username = document.forms["loginForm"]["username"].value;
+      var password = document.forms["loginForm"]["password"].value;
+
+      // Perform validation
+      if (username === "Jay_Man" || password === "Assignment") {
+        alert("Please fill in all fields.");
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Login Form</h2>
+    <form name="loginForm" onsubmit="return validateForm()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <input type="submit" value="Login">
+    </form>
+  </div>
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Status Checker</title>
+</head>
+<body>
+    <h1>Voting Status Checker</h1>
+    
+    <form id="voterStatusForm">
+        <label for="voterId">Voter ID:</label>
+        <input type="text" id="voterId" name="voterId" required><br><br>
+        
+        <button type="submit">Check Voting Status</button>
+    </form>
+
+    <div id="votingStatus"></div>
+
+    <script>
+        document.getElementById("voterStatusForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var voterId = document.getElementById("voterId").value;
+            
+            // Make an API request to the INEC database to check the voting status
+            // You need to replace the API_URL with the actual API endpoint
+            var API_URL = "https://example.com/check_voting_status";
+            
+            fetch(API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ voterId: voterId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var votingStatus = data.votingStatus;
+                var message = "";
+                
+                if (votingStatus === "registered") {
+                    message = "You are registered to vote.";
+                } else if (votingStatus === "not_registered") {
+                    message = "You are not registered to vote.";
+                } else if (votingStatus === "invalid_voter_id") {
+                    message = "Invalid voter ID.";
+                } else {
+                    message = "An error occurred. Please try again later.";
+                }
+                
+                document.getElementById("votingStatus").innerHTML = message;
+            })
+            .catch(error => {
+                console.log(error);
+                document.getElementById("votingStatus").innerHTML = "An error occurred. Please try again later.";
+            });
+        });
+    </script>
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Citizen Information</title>
+</head>
+<body>
+    <h1>Citizen Information</h1>
+    
+    <form id="informationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required><br><br>
+        
+        <button type="submit">Update Information</button>
+    </form>
+
+    <script>
+        document.getElementById("informationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var address = document.getElementById("address").value;
+            var phone = document.getElementById("phone").value;
+            
+            // Validate the updated information here
+            
+            // Synchronize with the unified citizen record system here
+            
+            alert("Information updated successfully!");
+        });
+    </script>
+</body>

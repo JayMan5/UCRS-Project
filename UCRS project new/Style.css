@@ -1,0 +1,103 @@
+head>
+  header>J UCRS Framework/title>
+  style>
+    /* Add your CSS styles here */
+    body {
+      font-style: italic;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: rgb(98, 44, 111);
+      font-style: italic;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      background-color: #433361;
+      padding: 10px;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration:green;
+      color:wheat;
+      padding: 5px 10px;
+    }
+    nav ul li a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    main {
+      padding: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    .word {
+      height: 7rem;
+      width: 45rem;
+    }
+  style>
+
+head>
+  header>Login/title>
+  style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+     background-color: #433361;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .container h2 {
+      text-align: center;
+      
+    }
+    .container label, .container input[type="text"], .container input[type="password"] {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .container input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    section {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color:green;
+      }
+      
+      section h2 {
+        color: white;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      
+      section p {
+        color: white;
+        font-size: 16px;
+      }
+
+			
+
